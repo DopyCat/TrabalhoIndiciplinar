@@ -57,7 +57,8 @@ int main (void){
         "\n5 (reservar assento)"
         "\n0 (finalizar cadastro)\n");
 
-        printf("\n");
+        printf("|\n"
+        "V");
 
 
         scanf("%d",&menu);
