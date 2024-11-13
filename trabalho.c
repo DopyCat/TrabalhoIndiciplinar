@@ -46,6 +46,27 @@ typedef struct reserva{
 
 
 int main (void){
+    int menu;
+    do
+    {
+        printf("selecione uma opcao:"
+        "\n1 (registrar passageiro)"
+        "\n2 (registrar tripulacao)"
+        "\n3 (registrar voo)"
+        "\n4 (registrar assentos)"
+        "\n5 (reservar assento)"
+        "\n0 (finalizar cadastro)\n");
+
+        printf("\n");
+
+
+        scanf("%d",&menu);
+
+        printf("-------------------------------------\n");
+
+    } while (menu != 0);
+    
+    
 
 
     return 0;
