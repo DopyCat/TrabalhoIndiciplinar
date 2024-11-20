@@ -44,6 +44,25 @@ typedef struct reserva{
     int codigo_passageiro;
 }reserva;
 
+void registrarPassageiro(){
+   char buffer[100];
+passageiro pessoa;
+printf("escreva seu nome\n");
+fgets(pessoa.nome,100, stdin);
+fgets(pessoa.nome,100, stdin);
+FILE *arquivo;
+arquivo=fopen("documentos.txt","w");
+if(!arquivo){
+    printf("Erro na abertura do arquivo.");
+        exit(0);
+}
+
+sprintf(buffer,"%s\t",pessoa.nome);
+fputs(buffer,arquivo);
+fclose(arquivo);
+}
+
+
 
 int main (void){
     int menu;
@@ -58,12 +77,22 @@ int main (void){
         "\n0 (finalizar cadastro)\n");
 
         printf("|\n"
-        "V");
+        "V\n");
 
 
         scanf("%d",&menu);
 
         printf("-------------------------------------\n");
+
+        switch (menu)
+        {
+        case 1:
+            registrarPassageiro();
+            break;
+        
+        default:
+            break;
+        }
 
     } while (menu != 0);
     
