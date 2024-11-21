@@ -59,16 +59,16 @@ void registrarPassageiro()
     fgets(pessoa.endereco, 100, stdin);
     fgets(pessoa.endereco, 100, stdin);
 
-    printf("escreva seu numero de telefone");
+    printf("escreva seu numero de telefone\n");
     fgets(pessoa.telefone, 50, stdin);
     fgets(pessoa.telefone, 50, stdin);
 
-    printf("tem fidelidade? (s ou n)");
+    printf("tem fidelidade? (s ou n)\n");
     scanf("%c", &pessoa.fidelidade);
 
     if (pessoa.fidelidade == 's')
     {
-        printf("quantos pontos de fidelidade voce tem?");
+        printf("quantos pontos de fidelidade voce tem?\n");
         scanf("%d", &pessoa.pontos_fidelidade);
     }
 
@@ -76,7 +76,7 @@ void registrarPassageiro()
     arquivo = fopen("documentos.txt", "w");
     if (!arquivo)
     {
-        printf("Erro na abertura do arquivo.");
+        printf("Erro na abertura do arquivo.\n");
         exit(0);
     }
 
@@ -85,19 +85,19 @@ void registrarPassageiro()
     fclose(arquivo);
 }
 
-void registrarTripulação()
+void registrarTripulacao()
 {
     tripulacao pessoa;
 
-    printf("escreva seu nome");
+    printf("escreva seu nome\n");
     fgets(pessoa.nome, 100, stdin);
     fgets(pessoa.nome, 100, stdin);
 
-    printf("escreva seu numero de telefone");
+    printf("escreva seu numero de telefone\n");
     fgets(pessoa.telefone, 50, stdin);
     fgets(pessoa.telefone, 50, stdin);
 
-    printf("escreva seu cargo");
+    printf("escreva seu cargo\n");
     fgets(pessoa.cargo, 20, stdin);
     fgets(pessoa.cargo, 20, stdin);
 
@@ -106,31 +106,31 @@ void registrarTripulação()
 void registrarVoo() {
     voo aviao;
 
-    printf("escreva a data do voo");
+    printf("escreva a data do voo\n");
     fgets(aviao.data, 10, stdin);
     fgets(aviao.data, 10, stdin);
 
-    printf("escreva a origem do voo");
+    printf("escreva a origem do voo\n");
     fgets(aviao.origem, 100, stdin);
     fgets(aviao.origem, 100, stdin);
 
-    printf("escreva o destino do voo");
+    printf("escreva o destino do voo\n");
     fgets(aviao.destino, 100, stdin);
     fgets(aviao.destino, 100, stdin);
 
-    printf("escreva o codigo do aviao");
+    printf("escreva o codigo do aviao\n");
     scanf("%d",&aviao.codigo_aviao);
 
-    printf("escreva o codigo do piloto");
+    printf("escreva o codigo do piloto\n");
     scanf("%d",&aviao.codigo_piloto);
 
-    printf("escreva o codigo do copiloto");
+    printf("escreva o codigo do copiloto\n");
     scanf("%d",&aviao.codigo_copiloto);
 
-    printf("escreva o codigo do comissario");
+    printf("escreva o codigo do comissario\n");
     scanf("%d",&aviao.codigo_comissario);
 
-    printf("escreva o status do voo");
+    printf("escreva o status do voo\n");
     fgets(aviao.status, 10, stdin);
     fgets(aviao.status, 10, stdin);
 
@@ -139,19 +139,19 @@ void registrarVoo() {
 void registrarAssento() {
     assento cadeira;
 
-    printf("escreva o nume do assento");
+    printf("escreva o nume do assento\n");
     scanf("%d",&cadeira.numero);
 
-    printf("escreva status do assento");
+    printf("escreva status do assento\n");
     scanf("%d",&cadeira.status);
 }
 
 void registrarReserva(){
     reserva reservado;
-    printf("escreva codigo do assento");
+    printf("escreva codigo do assento\n");
     scanf("%d",&reservado.numero_assento);
 
-    printf("escreva codigo do passageiro");
+    printf("escreva codigo do passageiro\n");
     scanf("%d",&reservado.codigo_passageiro);
 }
 
@@ -181,8 +181,21 @@ int main(void)
             registrarPassageiro();
             break;
 
-        default:
-            break;
+        case 2:
+        registrarTripulacao();
+        break;
+
+        case 3:
+        registrarVoo();
+        break;
+
+        case 4:
+        registrarAssento();
+        break;
+
+        case 5:
+        registrarReserva();
+        break;
         }
 
     } while (menu != 0);
