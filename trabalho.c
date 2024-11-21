@@ -137,7 +137,22 @@ void registrarVoo() {
 }
 
 void registrarAssento() {
-    
+    assento cadeira;
+
+    printf("escreva o nume do assento");
+    scanf("%d",&cadeira.numero);
+
+    printf("escreva status do assento");
+    scanf("%d",&cadeira.status);
+}
+
+void registrarReserva(){
+    reserva reservado;
+    printf("escreva codigo do assento");
+    scanf("%d",&reservado.numero_assento);
+
+    printf("escreva codigo do passageiro");
+    scanf("%d",&reservado.codigo_passageiro);
 }
 
 int main(void)
